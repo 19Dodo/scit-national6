@@ -58,6 +58,10 @@ function renderArticle(articleData) {
   article.appendChild(articleContent);
   article.appendChild(removeButton);
 
+  removeButton.addEventListener("click", function(){
+    article.remove();
+  })
+
   articleListHtml.appendChild(article);
 
   // after creating the necessary html structure for a article items, we need to populated with data
