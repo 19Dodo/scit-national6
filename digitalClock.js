@@ -5,6 +5,7 @@ console.log("JavaScript - Digital Clock");
 
 let seconds = 0;
 const secondsParagraphs = document.querySelectorAll(".seconds p");
+//secondsParagraphs[1].innerText="3";
 
 let minutes = 0;
 const minutesParagraphs = document.querySelectorAll(".minutes p");
@@ -12,17 +13,28 @@ const minutesParagraphs = document.querySelectorAll(".minutes p");
 let hours = 0;
 const hoursParagraphs = document.querySelectorAll(".hours p");
 
-setInterval(function () {
-  renderDigits(seconds, secondsParagraphs);
-  renderDigits(minutes, minutesParagraphs);
-  renderDigits(hours, hoursParagraphs);
+let cron;
 
-  seconds++;
+document.getElementById("start").addEventListener("click",start);
 
+document.getElementById("pause").addEventListener("click",pause);
+
+document.getElementById("reset").addEventListener("click",reset);
+
+
+function start(){
+  pause();
+  cron=setInterval(function(){
+    renderDigits(seconds, secondsParagraphs);
+    renderDigits(minutes, minutesParagraphs);
+    renderDigits(hours,hoursParagraphs)
+    
+    seconds++;
   if (seconds === 60) {
     seconds = 0;
     minutes++;
   }
+
 
   if (minutes === 60) {
     minutes = 0;
@@ -32,7 +44,31 @@ setInterval(function () {
   if (hours === 24) {
     hours = 0;
   }
-}, 1000);
+  console.log(seconds);
+  console.log(minutes);
+},10)
+}; 
+
+function pause(){
+  clearInterval(cron);
+}
+
+function reset(){
+  secondsParagraphs[0].innerText = 0;
+  secondsParagraphs[1].innerText = 0;
+  
+  minutesParagraphs[0].innerText = 0;
+  minutesParagraphs[1].innerText = 0;
+
+  hoursParagraphs[0].innerText = 0;
+  hoursParagraphs[1].innerText = 0;
+  clearInterval(cron);
+  seconds=0;
+  minutes=0;
+  hours=0;
+};
+  
+
 
 function renderDigits(nr, pList) {
   const stringDigits = nr + "";
