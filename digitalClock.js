@@ -22,6 +22,7 @@ document.getElementById("pause").addEventListener("click",pause);
 document.getElementById("reset").addEventListener("click",reset);
 
 
+
 function start(){
   pause();
   cron=setInterval(function(){
@@ -54,6 +55,7 @@ function pause(){
 }
 
 function reset(){
+  pause();
   secondsParagraphs[0].innerText = 0;
   secondsParagraphs[1].innerText = 0;
   
@@ -67,7 +69,35 @@ function reset(){
   minutes=0;
   hours=0;
 };
+
+document.getElementById("save").addEventListener("click",function(){
+  document.getElementById("digital-clock-saves").innerHTML=document.getElementById("digital-clock-saves").innerHTML +
+  '<div class = "digital-clock">' +
+   '<div class="hours">' +
+   '<div class = "minutes">'+
+   '<div class = "seconds">'+
+   '<p>'+hoursParagraphs[0].innerText +'</p>' +
+   '<p>'+hoursParagraphs[1].innerText +'</p>' +
+   
+   '<p>:</p>'+
+   
+   '<p>'+minutesParagraphs[0].innerText +'</p>' +
+   '<p>'+minutesParagraphs[1].innerText +'</p>' +
+   
+   '<p>:</p>'+
+   
+   '<p>'+secondsParagraphs[0].innerText +'</p>' +
+   '<p>'+secondsParagraphs[1].innerText +'</p>' +
+   '</div' +
+   '</div' +
+   '</div' +
+  '</div>';
   
+
+})
+
+
+
 
 
 function renderDigits(nr, pList) {

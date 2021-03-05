@@ -4,5 +4,8 @@
   
   .digital-clock > div {
     display: flex;
+    
   }
-  
+  #digital-clock-saves p{
+      display: inline;
+}
