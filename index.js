@@ -9,7 +9,7 @@ const articleListHtml = document.querySelector(".article-list");
 // we will get/fetch the data when user click on a button
 document.getElementById("get-data").addEventListener("click", function () {
   // "fetch" is a JavaScript function that tells the browser the make a request the specified address in the argument
-  fetch("https://simple-json-server-scit.herokuapp.com/posts")
+  fetch("https://simple-json-server-scit.herokuapp.com/comments")
     // "this .then" is responsible for linking a callback function to the event trigger by the browser when the server responds back
     .then(handleFetchResponse)
     // "this .then" is responsible for linking a callback function to the event trigger by the parser of the body of the response
