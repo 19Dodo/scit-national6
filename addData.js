@@ -1,5 +1,6 @@
 console.log("JavaScript - AJAX");
 console.log("CRUD Operation - Create");
+console.log("CRUD Operation - Create step");
 
 
 document
@@ -20,16 +21,13 @@ document
         console.log("Payload Text:",JSON.stringify(payload));
         fetch("https://simple-json-server-scit.herokuapp.com/posts", { 
                 method: 'POST',
-                mode: 'cors', 
-                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-                credentials: 'same-origin', // include, *same-origin, omit
+            
                 headers: {
                   'Content-Type': 'application/json'
-                  // 'Content-Type': 'application/x-www-form-urlencoded',
+                  
                 },
-                redirect: 'follow', // manual, *follow, error
-                referrerPolicy: 'no-referrer', 
-                body: JSON.stringify(payload) // body data type must match "Content-Type" header
+             
+                body: JSON.stringify(payload) 
             
         }).then(getData);
     }
