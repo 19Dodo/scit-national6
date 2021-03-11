@@ -98,7 +98,7 @@ function renderArticle(articleData){
         }
 
         fetch(`https://simple-json-server-scit.herokuapp.com/posts/${articleData.id}`, { 
-                method: 'PUT',
+                method: "PUT",
             
                 headers: {
                   'Content-Type': 'application/json'
