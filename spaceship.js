@@ -59,10 +59,26 @@ class Spaceship {
 
     moveSpaceship(direction) {
         if (direction === "ArrowRight") {
-          this.positionX += 5;
+            if(direction==="ArrowRight" && direction==="ArrowUp" ){
+                this.positionX += 5;
+                this.positionY -= 5;
+            }
+            else if(direction==="ArrowRight" && direction==="ArrowDown"){
+                this.positionX += 5;
+                this.positionY +=5;
+            }
+            else this.positionX += 5;
           this.ref.style.transform = `translate(${this.positionX}px, ${this.positionY}px)`;
         } else if (direction === "ArrowLeft") {
-            this.positionX -= 5;
+            if(direction==="ArrowLeft" && direction==="ArrowUp" ){
+                this.positionX -= 5;
+                this.positionY -= 5;
+            }
+            else if(direction==="ArrowLeft" && direction==="ArrowDown"){
+                this.positionX -= 5;
+                this.positionY +=5;
+            }
+            else this.positionX -= 5;
             this.ref.style.transform = `translate(${this.positionX}px, ${this.positionY}px)`;
         } else if (direction === "ArrowUp") {
             this.positionY -= 5;
