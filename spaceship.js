@@ -58,7 +58,6 @@ class Spaceship {
     }
 
     moveSpaceship(direction) {
-        console.log(this.positionX + ' : ' + this.positionX);
         if (direction === "ArrowRight") {
           this.positionX += 5;
           this.ref.style.transform = `translate(${this.positionX}px, ${this.positionY}px)`;
