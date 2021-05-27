@@ -17,6 +17,14 @@ $(document).ready(function(){
     });
 
     
+    var typed= new Typed(".typing",{
+        strings: ["Student" , "Junior Developer" , "Web Developer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    })
+
+
     //toggle menu/navbar
     $('.menu-btn').click(function(){
         $('.navbar .menu').toggleClass("active");
